@@ -192,8 +192,8 @@ desired effect
     }
     </script>
    <script>
-        document.write("Your id is: "+localStorage.teacher_id);
-        if(localStorage.teacher_id === undefined){
+        document.write("Your id is: "+localStorage.uid);
+        if(localStorage.uid === undefined){
           alert("You need to login first!");
           window.location.href="index.html";
         }
@@ -212,7 +212,7 @@ desired effect
                   //var sid = document.getElementById("StudentID").value;
                    //var tid = localStorage.teacher_id;
                    alert(sid);
-                   alert(localStorage.teacher_id);
+                   alert(localStorage.uid);
                     $.ajax({
                       url: 'http://qrcode.freesandboxdomain.com/home/updateattendance',
                       type: 'POST',

@@ -136,6 +136,7 @@ desired effect
 	data: {username: myusername,login_password: mypassword},
 	success: function(response) {
                   console.log(response);
+                  alert(response);
                   if(response == "mismatch"){
                     alert("Invalid username/password!");
                     window.location.href="index.html";

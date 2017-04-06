@@ -143,6 +143,20 @@ desired effect
         Home
 
       </h1>
+      <!--  <script>
+        document.write("Your Account id is: "+localStorage.teacher_id);
+        if(localStorage.teacher_id === undefined){
+          alert("You need to login first!");
+          window.location.href="index.html";
+        }
+    </script>-->
+     <script>
+        document.write("Your Account id is: "+localStorage.uid);
+        if(localStorage.uid === undefined){
+          alert("You need to login first!");
+          window.location.href="index.html";
+        }
+    </script>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <!--<li class="active">Here</li> -->
@@ -191,13 +205,7 @@ desired effect
             });
     }
     </script>
-   <script>
-        document.write("Your id is: "+localStorage.uid);
-        if(localStorage.uid === undefined){
-          alert("You need to login first!");
-          window.location.href="index.html";
-        }
-    </script>
+  
 
     <script>
         function sign_out(){
@@ -216,16 +224,27 @@ desired effect
                     $.ajax({
                       url: 'http://qrcode.freesandboxdomain.com/home/updateattendanceteacher',
                       type: 'POST',
-                      data: {id_number: sid,uid:localStorage.uid },
+                      data: {id_number: sid, uid:localStorage.uid },
                       success: function(response) {
                                       alert(response);
                       }
-                        });
+                    });
             }
         </script>
 
-
     <center>
+    Teacher ID No:<br>
+    <input type="text" name="id_number" id="results" placeholder="Your Teacher ID">
+      <br>
+    <input type="submit" class="btn btn-primary" onclick="save_code3();" />
+
+        <input type="hidden" name="id_number" id="StudentID" placeholder="id number">
+
+        <input type="hidden" onclick="submit1();" />
+
+
+    </center>    
+    <!--<center>
     <input type="text" name="id_number" id="results" placeholder="id number">
     <br>
     <input type="submit" class="btn btn-primary" onclick="save_code3();" />
@@ -235,7 +254,7 @@ desired effect
         <input type="hidden" onclick="submit1();" />
 
 
-    </center>
+    </center>-->
 
  <button style="display: none" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   My modal
@@ -248,7 +267,7 @@ desired effect
         <h4 class="modal-title" id="gridSystemModalLabel">Result</h4>
       </div>
       <div class="modal-body">
-         Please verify the id then submit it to complete the attendance of the student
+         Please verify the Student ID No. then submit it to complete the attendance of the student
       </div>
 
       <div class="modal-footer">
